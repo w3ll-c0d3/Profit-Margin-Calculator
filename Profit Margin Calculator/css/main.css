@@ -1,0 +1,251 @@
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+:root {
+  --font-family: 'Baloo Bhaijaan 2', cursive;
+  --primary-color: whitesmoke;
+  --secondary-color: black;
+  --tertiary-color: darkgrey;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.flex {
+  display: flex;
+}
+
+.header-container {
+  background-color: black;
+  height: 30vh;
+  width: 100%;
+  text-align: center;
+  border-bottom: 2px solid var(--tertiary-color);
+}
+
+.main-title {
+  font-family: var(--font-family);
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 2em;
+  padding-top: 70px;;
+}
+
+.nav-bar {
+  position: fixed;
+  height: 50px;
+  width: 100%;
+  text-align: center;
+  align-items: flex-end;
+  padding: 0 20px;
+  justify-content: space-between;
+  background-color: black;
+}
+
+.main-menu {
+  position: fixed;
+  display: flex;
+  left: -100%;
+  flex-direction: column;
+  justify-content: center;
+  background-color: black;
+  width: 100%;
+  transition: 0.5;
+  height: 90%;
+  opacity: 0.9;
+  top: 50px;
+}
+
+.main-menu.active {
+  left: 0;
+}
+
+.main-menu > li {
+  list-style: none;
+}
+
+.nav-link {
+  color: white;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 1.2em;
+  text-decoration: none;
+  text-align: center;
+}
+
+.hamburguer {
+  display: block;
+  cursor: pointer;
+  float: right;
+  margin-top: 10px;
+}
+
+.hamburguer.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburguer.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburguer.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.bar {
+  display: block;
+  width: 20px;
+  height: 3px;
+  margin: 3px auto;
+  background-color: white;
+  opacity: 0.9;
+}
+
+.first-section {
+  color: var(--secondary-color);
+  height: 90vh;
+  width: 100vw;
+  text-align: center;
+  display: inline-block;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+h2 {
+  color: var(--secondary-color);
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 1.2em;
+} 
+
+.cost-container, .margin-container {
+  color: var(--tertiary-color);
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 1.2em;
+  padding: 20px;
+  height: 30%;
+  width: 100%;
+}
+
+.cost-title, .margin-title {
+  color: var(--tertiary-color);
+  font-size: 1em;
+}
+
+#cost, #margin {
+  border: 1px solid var(--tertiary-color);
+  border-radius: 20px;
+  width: 90%;
+  text-align: center;
+}
+
+.margin-container {
+  border-top: 1px solid greenyellow;
+}
+
+.btn-dark {
+  margin-top: 20px;;
+  height: 40px;
+  width: 100px;
+  border-radius: 20px;
+}
+
+.second-section {
+  background-color: var(--tertiary-color);
+  height: 80vh;
+  width: 100vw;
+  padding: 4px 0;
+  text-align: center;
+}
+
+#result-field {
+  background-color: white;
+  color: var(--tertiary-color);
+  height: 100%;
+  width: 100%;
+  font-family: var(--font-family);
+  font-size: 2em;
+  font-weight: 400;
+  padding-top: 25px;
+}
+
+#revenue-text, #profit-text {
+  color: greenyellow;
+}
+
+.warning-rp {
+  font-size: 15px;
+  text-align: center;
+}
+
+.third-section {
+  color: var(--secondary-color);
+  background-color: whitesmoke;
+  width: 100vw;
+  height: 100%;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+h2, h3 {
+  text-align: center;
+  color: var(--tertiary-color);
+  font-family: var(--font-family);
+  font-weight: 400;
+}
+
+.columns {
+  margin: 2em 10px;
+  color: var(--secondary-color);
+}
+
+.footer {
+  background-color: black;
+  border-top: 4px solid var(--tertiary-color);
+  color: var(--tertiary-color);
+  height: 200px;
+  text-align: center;
+  justify-content: center;
+  padding: 60px;
+}
+
+/* Media Queries */
+@media screen and (min-width: 768px) {
+  .hamburguer {
+    display: none;
+  }
+
+  .first-section {
+    display: inline-flex;
+    height: 50vh;
+    align-items: center;
+  }
+
+  .cost-container, .margin-container {
+    border-top: 1px solid greenyellow;
+    height: 50%;
+    width: 25%;
+  }
+
+  .second-section {
+    height: 50vh;
+  }
+
+  .third-section {
+    height: 60vh;
+    justify-content: space-around;
+  }
+
+  .columns {
+    column-count: 2;
+    width: 90%;
+    margin: 40px 20px;
+    align-self:center;
+    align-content: center;
+  }
+
+}

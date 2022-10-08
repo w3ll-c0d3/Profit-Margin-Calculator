@@ -9,11 +9,6 @@
   padding: 10px 0;
 }
 
-h2 {
-  font-family: var(--font-family);
-  font-size: 1.2rem;
-} 
-
 .cost-container, .margin-container {
   font-family: var(--font-family);
   font-size: 1.2rem;
@@ -74,11 +69,6 @@ h2 {
   height: 100%;
   font-size: 1.2rem;
   text-align: center;
-}
-
-h2, h3 {
-  text-align: center;
-  font-family: var(--font-family);
 }
 
 .columns {

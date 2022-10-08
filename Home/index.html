@@ -1,31 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/main.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;600&display=swap" rel="stylesheet">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profit Margin</title>
+    <title>Profit Margin | Home</title>
   </head>
-
+  
   <body>
+    <!-- Start header -->
     <header class="header-container">
-        <nav class="nav-bar">
-          <ul class="main-menu">
-            <li><a href="#home" class="nav-link">Home</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
-          </ul>
-          <div class="hamburguer">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-          </div>
-        </nav>
         <h1 class="main-title">Profit Margin Calculator</h1>
     </header>
+    <!-- End Header -->
+
+    <!-- Start Section -->
     <section class="first-section flex">
       <div class="cost-container">
         <p class="cost-title">Cost Price ( $ )</p>
@@ -43,6 +32,9 @@
           <a href="#section-two"><input type="submit" id="calc-btn" class="btn-dark" onclick="calculate();" value="Calculate"/></a>
       </div>
     </section>
+    <!-- End section -->
+
+    <!-- Start section -->
     <section id="section-two" class="second-section flex">
       <div id="result-field">
         <p class="revenue">Revenue
@@ -68,8 +60,12 @@
           <p class="column-2">Profit describes the financial benefit realized when revenue generated from a business activity exceeds the expenses, costs, and taxes involved in sustaining the activity in question. Any profits earned funnel back to business owners, who choose to either pocket the cash or reinvest it back into the business. Profit is calculated as total revenue less total expenses.</p>
       </div>
     </section>
+    <!-- End section -->
+
+    <!-- Start footer -->
     <footer class="footer flex">&copy; Copyright 2022 Wellington Santos</footer>
-  <script src="scripts/script.js"></script>
+    <!-- End footer -->
+    <script src="scripts/script.js"></script>
   </body>
 </html>
 

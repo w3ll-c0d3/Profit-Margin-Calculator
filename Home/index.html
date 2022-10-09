@@ -11,12 +11,12 @@
   
   <body>
     <!-- Start header -->
-    <header class="header-container">
+    <header class="header-container" id="home">
           <!-- Navbar content -->
         <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
           <div class="container-fluid">
-              <a class="navbar-brand" href="#">Profit</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+              <a class="navbar-brand brand-name" href="#"><span class="inicial-letter">|P</span>rofit Margin Calculator</a>
+              <button class="navbar-toggler hamburger-menu" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarText">
@@ -27,76 +27,77 @@
                   <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                  </li>
                 </ul>
-                <span class="navbar-text">
-                  Navbar text with an inline element
-                </span>
               </div>
           </div>
-          
         </nav>
         <!-- End navbar -->
-        <h1 class="main-title">Profit Margin Calculator</h1>
-    </header>
-    <!-- End Header -->
-
-    <!-- Start Section -->
-    <section class="first-section flex">
-      <div class="cost-container">
-        <p class="cost-title">Cost Price ( $ )</p>
-        <form class="cost-form">
-          <input id="cost" type="number" min="0" placeholder="cost price"/>
-          <br>
-        </form>
-      </div>
-      <div class="margin-container">
-        <p class="margin-title">Margin <span id="margin-text">( % )</span></p>
-        <form class="margin-form">
-          <input id="margin" type="number" min="1" max="99" placeholder="margin"/>
-          <br>
+      </header>
+      <!-- End Header -->
+      
+    <main>
+      <!-- Start Section 1-->
+      <section id="section-one" class="first-section flex">
+        <h1 class="main-title">Margin calculator</h1>
+        <div class="cost-container flex">
+          <h2 class="cost-title">COST PRICE<span id="cost-text"> ($)</span></h2>
+          <form class="cost-form">
+            <input id="cost" type="number" min="0" placeholder="cost price"/>
+            <br>
           </form>
-          <a href="#section-two"><input type="submit" id="calc-btn" class="btn-dark" onclick="calculate();" value="Calculate"/></a>
-      </div>
-    </section>
-    <!-- End section -->
-
-    <!-- Start section -->
-    <section id="section-two" class="second-section flex">
-      <div id="result-field">
-        <p class="revenue">Revenue
-          <br>
-          <span id="revenue-text">0</span></p>
-        <p class="profit">Profit
-          <br>
-          <span id="profit-text">0</span>
-        </p>
-        <br>
-        <div class="warning-rp" >
-          <span>*REVENUE = FINAL PRICE*</span>
-          <br>
-          <span>*PROFIT = REVENUE - TOTAL EXPENSES*</span>
         </div>
-      </div>
-    </section>
-    <section class="third-section flex">
-      <div class="columns">
-        <h2>What is Revenue?</h2>
-          <p class="column-1">Revenue is the amount a company receives from selling goods and/or providing services to its customers and clients. A company's revenue, which is reported on the first line of its income statement, is often described as sales or service revenues. Hence, revenue is the amount earned from customers and clients before subtracting the company's expenses.</p>
-        <h2>What is Profit?</h2>
-          <p class="column-2">Profit describes the financial benefit realized when revenue generated from a business activity exceeds the expenses, costs, and taxes involved in sustaining the activity in question. Any profits earned funnel back to business owners, who choose to either pocket the cash or reinvest it back into the business. Profit is calculated as total revenue less total expenses.</p>
-      </div>
-    </section>
-    <!-- End section -->
-
+        <div class="margin-container flex">
+          <h2 class="margin-title">MARGIN<span id="margin-text"> (%)</span></h2>
+          <form class="margin-form">
+            <input id="margin" type="number" min="1" max="99" placeholder="margin"/>
+            <br>
+          </form>
+          <a href="#section-two" class="container-btn"><input type="submit" id="calc-btn" onclick="calculate();" value="CALCULATE"/></a>
+        </div>
+      </section>
+      <!-- End section 1-->
+      <hr> 
+      <!-- Start section 2-->
+      <section id="section-two" class="second-section flex">
+        <div id="result-field">
+          <h3 class="revenue">REVENUE
+            <br>
+            <span id="revenue-text">0</span></h3>
+          <h3 class="profit">PROFIT
+            <br>
+            <span id="profit-text">0</span>
+          </h3>
+          <br>
+          <div class="warning-rp" >
+            <span>*REVENUE = FINAL PRICE*</span>
+            <br>
+            <span>*PROFIT = REVENUE - TOTAL EXPENSES*</span>
+          </div>
+        </div>
+      </section>
+      <section class="third-section flex">
+        <div class="columns">
+          <h2>What is Revenue?</h2>
+            <p class="column-1">Revenue is the amount a company receives from selling goods and/or providing services to its customers and clients. A company's revenue, which is reported on the first line of its income statement, is often described as sales or service revenues. Hence, revenue is the amount earned from customers and clients before subtracting the company's expenses.</p>
+          <h2>What is Profit?</h2>
+            <p class="column-2">Profit describes the financial benefit realized when revenue generated from a business activity exceeds the expenses, costs, and taxes involved in sustaining the activity in question. Any profits earned funnel back to business owners, who choose to either pocket the cash or reinvest it back into the business. Profit is calculated as total revenue less total expenses.</p>
+        </div>
+      </section>
+      <!-- End section -->
+    </main>  
+    <hr>
     <!-- Start footer -->
-    <footer class="footer flex">&copy; Copyright 2022 Wellington Santos</footer>
+    <footer class="footer">
+      <div class="footer-items">
+        <span class="Copyright">&copy; Wellington Santos 2022</span>
+        <br>
+        <a href="#home">Home</a>
+        <br>
+        <a href="#contact">contact</a>
+      </div>
+    </footer>
     <!-- End footer -->
     <script src="scripts/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   </body>
 </html>
-
-

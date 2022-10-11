@@ -34,6 +34,18 @@ html {
   display: inline-flex;
 }
 
+.error {
+  color: #FF0000;
+  display: none;
+  margin-bottom: 10px;
+  font-family: var(--font-family);
+  font-weight: 500;
+}
+
+.error.display-error {
+  display: block;
+}
+
 .footer {
   height: 200px;
   text-align: center;

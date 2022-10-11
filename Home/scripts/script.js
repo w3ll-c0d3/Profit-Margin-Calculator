@@ -1,40 +1,52 @@
 var netProfit = document.getElementById("profit-text");
-      var ofs = 0;
-      var blinkResult = document.getElementById("result-field"); 
-      const hamburguer = document.querySelector(".hamburguer");
-      const mainMenu = document.querySelector(".main-menu");
-      
-      hamburguer.addEventListener("click", () => {
-          hamburguer.classList.toggle("active");
-          mainMenu.classList.toggle("active");
-      })
+let margin = document.querySelector("#margin");
+let marginForm = document.querySelector(".margin-form");
+let cost = document.querySelector("#cost");
 
-      document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
-          hamburguer.classList.remove("active");
-          mainMenu.classList.remove("active");
-      }))
+marginForm.addEventListener('submit', (e) => {
+  if(verifyMarginValue() !== true) {
+    e.preventDefault();
+  } else {
+    console.log("Ok");
+  }
+})
 
-      function smoothScrolling() {
-        window.scrollTo({
-          top: document.getElementById("section-two").offsetTop, 
-          behavior: "smooth"
-        })
-      }
+function verifyMarginValue() {
+  if(margin.value >= 100 || margin.value <= 0) {
+    setError("margin-error", "Margin cannot be equal to or greater than 100%. Please input a lower value.");
+    return false
+  } else {
+    removeError();
+    return true
+  }
+}
 
-      function blinkingEffect() {
-        window.setInterval(function() {
-            blinkResult.style.background = 'rgba(0,0,0,' + Math.abs(Math.sin(ofs))+')';
-            ofs += 0.03;
-        }, 100);
-      }
+function smoothScrolling() {
+    window.scrollTo({
+      top: document.getElementById("section-two").offsetTop, 
+    behavior: "smooth"
+  })
+}
 
-      function calculate() {
-        smoothScrolling()
-        blinkingEffect()
-        a = cost.value;
-        b = (100 - margin.value) / 100;
-        result = (a / b);
-        res = document.getElementById("revenue-text").innerText = "$" + result.toFixed(2);
-        net = netProfit.innerText = "$" + (result.toFixed(2) - a).toFixed(2);
-        marginText = document.getElementById('margin-text').innerText = margin.value + "%"
-    }
+function calculate() {
+  verifyMarginValue();
+  smoothScrolling()
+  a = cost.value;
+  b = (100 - margin.value) / 100;
+  result = (a / b);
+  res = document.getElementById("revenue-text").innerText = "$" + result.toFixed(2);
+  net = netProfit.innerText = "$" + (result.toFixed(2) - a).toFixed(2);
+  marginText = document.getElementById('margin-text').innerText = " " + margin.value + "%"
+}
+
+function setError(error, message) {
+  document.querySelector("."+error).classList.add("display-error");
+  document.querySelector("."+error).innerHTML = message;
+}
+
+function removeError() {
+  let errors = document.querySelectorAll(".error");
+  for(let err of errors) {
+    err.classList.remove("display-error");
+  }
+}

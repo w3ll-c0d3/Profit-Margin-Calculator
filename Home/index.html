@@ -14,13 +14,13 @@
     <header class="header-container" id="home">
           <!-- Navbar content -->
         <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
-          <div class="container-fluid">
-              <a class="navbar-brand brand-name" href="#"><span class="inicial-letter">|P</span>rofit Margin Calculator</a>
+          <div class="container-fluid flex">
+              <a class="navbar-brand brand-name" href="#"><span class="initial-letter">|P</span>rofit Margin Calculator</a>
               <button class="navbar-toggler hamburger-menu" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 flex">
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                   </li>
@@ -51,15 +51,16 @@
           <form class="margin-form">
             <input id="margin" type="number" min="1" max="99" placeholder="margin"/>
             <br>
+            <small class="error margin-error"></small>
+            <a href="#section-two" class="container-btn"><input type="submit" id="calc-btn" onclick="calculate();" value="CALCULATE"/></a>
           </form>
-          <a href="#section-two" class="container-btn"><input type="submit" id="calc-btn" onclick="calculate();" value="CALCULATE"/></a>
         </div>
       </section>
       <!-- End section 1-->
       <hr> 
       <!-- Start section 2-->
       <section id="section-two" class="second-section flex">
-        <div id="result-field">
+        <div id="result-field flex">
           <h3 class="revenue">REVENUE
             <br>
             <span id="revenue-text">0</span></h3>
@@ -91,13 +92,13 @@
       <div class="footer-items">
         <span class="Copyright">&copy; Wellington Santos 2022</span>
         <br>
-        <a href="#home">Home</a>
+        <a href="#home" class="footer-item">Home</a>
         <br>
-        <a href="#contact">contact</a>
+        <a href="#contact" class="footer-item">contact</a>
       </div>
     </footer>
     <!-- End footer -->
-    <script src="scripts/script.js"></script>
+    <script src="./scripts/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   </body>
 </html>

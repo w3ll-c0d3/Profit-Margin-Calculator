@@ -35,7 +35,7 @@
       </header>
       <!-- End Header -->
 
-    <main>
+    <main class="main-container flex">
       <!-- Start Section 1-->
       <section id="section-one" class="first-section flex">
         <h1 class="main-title">Margin calculator</h1>
@@ -48,11 +48,11 @@
         </div>
         <div class="margin-container flex">
           <h2 class="margin-title">MARGIN<span id="margin-text"> (%)</span></h2>
-          <form class="margin-form">
-            <input id="margin" type="number" min="1" max="99" placeholder="margin"/>
+          <form class="margin-form" action="#section-two">
+            <input id="margin" type="number" min="0" placeholder="margin"/>
             <br>
             <small class="error margin-error"></small>
-            <a href="#section-two" class="container-btn"><input type="submit" id="calc-btn" onclick="calculate();" value="CALCULATE"/></a>
+            <button type="submit" id="calc-btn" class="container-btn" value="CALCULATE">CALCULATE</button>
           </form>
         </div>
       </section>

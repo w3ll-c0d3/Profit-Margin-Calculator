@@ -7,13 +7,17 @@ marginForm.addEventListener('submit', (e) => {
   if(verifyMarginValue() !== true) {
     e.preventDefault();
   } else {
+    calculate();
     console.log("Ok");
   }
 })
 
 function verifyMarginValue() {
-  if(margin.value >= 100 || margin.value <= 0) {
+  if(margin.value >= 100) {
     setError("margin-error", "Margin cannot be equal to or greater than 100%. Please input a lower value.");
+    return false
+  } else if (margin.value <= 0) {
+    setError("margin-error", "Please select a value that is no less than 0");
     return false
   } else {
     removeError();
@@ -30,7 +34,7 @@ function smoothScrolling() {
 
 function calculate() {
   verifyMarginValue();
-  smoothScrolling()
+  smoothScrolling();
   a = cost.value;
   b = (100 - margin.value) / 100;
   result = (a / b);

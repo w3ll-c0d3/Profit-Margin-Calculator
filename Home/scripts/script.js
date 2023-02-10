@@ -8,7 +8,7 @@ marginForm.addEventListener('submit', (e) => {
     e.preventDefault();
   } else {
     calculate();
-    console.log("Ok");
+    e.preventDefault();
   }
 })
 
@@ -34,7 +34,7 @@ function smoothScrolling() {
 
 function calculate() {
   verifyMarginValue();
-  smoothScrolling();
+  // smoothScrolling();
   a = cost.value;
   b = (100 - margin.value) / 100;
   result = (a / b);
